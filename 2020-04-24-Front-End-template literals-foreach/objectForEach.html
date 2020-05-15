@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body {
+            margin: 0;
+        }
+    
+        .cards {
+            display: flex;
+            padding: 30px 10%;
+            background-color: rgb(120, 172, 221);
+        }
+    
+    
+        .card {
+            border: 1px solid rgb(37, 36, 92);
+            background-color: rgb(197, 220, 247);
+            border-radius: 5%;
+            width: 25%;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+    
+        .product_pic {
+            width: 100%;
+        }
+    
+        img {
+            width: 100%;
+    
+        }
+    
+        .product_text {
+            line-height: 1.8;
+            font-size: 20px;
+        }
+    
+    
+        h1 {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="cards"></div>
+
+
+    <script>
+        var products = [
+            {
+                product_name: '雞蛋沙拉',
+                caloris: '578',
+                price: '35',
+                discriptions: '就是要新感覺-雞蛋沙拉~*',
+                product_pic: 'https://www.pecos.com.tw/tmp/image/20190403/20190403152743_61120.jpg'
+            }, {
+                product_name: '草莓夾心',
+                caloris: '578',
+                price: '35',
+                discriptions: '就是要新感覺-草莓夾心~*',
+                product_pic: 'https://www.pecos.com.tw/tmp/image/20190403/20190403152800_19283.jpg'
+            },
+            {
+                product_name: '花生夾心',
+                caloris: '578',
+                price: '35',
+                discriptions: '就是要新感覺-花生夾心~*',
+                product_pic: 'https://www.pecos.com.tw/tmp/image/20190403/20190403152815_76527.jpg'
+            },
+            {
+                product_name: '可可夾心',
+                caloris: '578',
+                price: '35',
+                discriptions: '就是要新感覺-可可夾心~*',
+                product_pic: 'https://www.pecos.com.tw/tmp/image/20190403/20190403152828_22823.jpg'
+            }]
+
+        var cards = document.querySelector('.cards')
+        // console.log(cards);
+
+        products.forEach(function (product) {
+
+            cards.innerHTML += `    
+                <div class="card">    
+                <div class="product_pic">
+                    <img src="${product.product_pic}" alt="">
+                </div>
+                <div class="product_content">
+                    <h1>新感覺:${product.product_name}</h1>
+                    <div class="product_text">
+                        熱量:${product.caloris}大卡<br>
+                        價錢:${product.price}元<br>
+                        介紹: 就是要${product.discriptions}
+                        </div>
+                    </div>
+                 </div>
+                 `
+        })
+
+    </script>
+</body>
+
+</html>

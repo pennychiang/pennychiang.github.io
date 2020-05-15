@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+<style>
+    html,
+    body {
+        margin: 0;
+        scroll-behavior: smooth;
+        font-family: "微軟正黑體";
+
+    }
+
+
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .nav {
+        /* background-color: rgb(188, 243, 240); */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    .fa-bars {
+        display: none;
+    }
+
+    .logo {
+        width: 20%;
+        height: 80px;
+        background-image: url(img/logo.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+
+    }
+
+    nav .mobile-navbar-toggle {
+        display: none;
+    }
+
+
+    .banner {
+        width: 100%;
+        height: calc(100vh - 150px);
+        background-image: url(img/banner.jpg);
+        background-color: black;
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .anchors {
+        width: 100%;
+        /* height: 80px; */
+        justify-content: center;
+        /* background-color: rgb(188, 243, 240); */
+        align-items: center;
+
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justfy_content_space_around {
+        justify-content: space-around;
+    }
+
+
+    ul {
+        margin: 0 auto;
+        align-items: center;
+        padding: 15px 30px;
+    }
+
+    li {
+        font-size: 23px;
+        list-style: none;
+        box-sizing: border-box;
+        justify-content: center;
+
+    }
+
+    a {
+    }
+
+    .aboutus {
+        width: 100%;
+        /* height: calc(100vh - 100px); */
+        margin: 0 auto;
+        padding: 50px 0;
+        background-image: url(img/aboutus-bgi.jpg);
+        background-size: cover;
+        justify-content: center;
+
+        align-items: center;
+        flex-wrap: wrap;
+
+
+    }
+
+    .hotelpfhoto {
+        width: 500px;
+        height: 500px;
+        background-image: url(img/aboutus.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        margin-right: 50px;
+        /* background-color: rgba(253, 252, 252, 0.315); */
+
+    }
+
+    .introduction {
+        width: 500px;
+        text-align: justify;
+
+    }
+
+    h1 {
+        margin: 0;
+        text-align: center;
+        font-size: 30px;
+        background-color: rgba(253, 252, 252, 0.5);
+
+
+    }
+
+    .introduction p {
+        font-size: 18px;
+        text-align: justify;
+        background-color: rgba(253, 252, 252, 0.5);
+
+
+    }
+
+
+    .roomintro {
+        width: 100%;
+        /* width: 100%; */
+        /* height: calc(100vh - 100px); */
+        margin: 0 auto;
+        padding: 50px 0;
+
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .room {
+        /* background-color: darkgrey; */
+        width: 300px;
+        height: 500px;
+    }
+
+    .room1_photo {
+        width: 300px;
+        height: 200px;
+        background-image: url("img/room1.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+
+    .room2_photo {
+        width: 300px;
+        height: 200px;
+        background-image: url("img/room2.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+
+    .room3_photo {
+        width: 300px;
+        height: 200px;
+        background-image: url("img/room3.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+
+    .room_intro {
+        margin: 0;
+        text-align: justify;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        font-size: 19px;
+        text-align: justify;
+
+
+    }
+
+    .pallalex {
+        background-color: darkkhaki;
+        background-image: url("img/pallarex.jpg");
+
+        background-position: 50% 50%;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+
+    #C {
+        width: 100%;
+        height: calc(100vh - 240px);
+        background-image: url("img/location.jpg");
+        background-size: cover;
+        background-position: 30% 50%;
+
+        /* filter: opacity(0.5); */
+        align-items: center;
+        padding: 120px 0;
+    }
+
+    .location {
+        width: 100%;
+        max-width: 1140px;
+        margin: auto;
+    }
+
+    .location h1 {
+        margin-bottom: 30px;
+        color: rgb(8, 8, 8);
+        background-color: rgba(253, 252, 252, 0.7);
+    }
+
+    .location p {
+        font-size: 18px;
+        color: rgb(8, 8, 8);
+        background-color: rgba(253, 252, 252, 0.8);
+        padding: 0 50px;
+
+    }
+
+    #footer {
+        height: 50px;
+        /* background-color: rgb(134, 176, 196); */
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+
+
+    @media screen and (max-width: 768px) {
+        .nav {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .nav .logo {
+            min-width: 250px;
+            margin: 0 auto;
+        }
+
+        .fa-bars {
+            display: block;
+            color: rgb(108, 109, 110);
+            padding: 15px;
+
+        }
+
+        .banner {
+            width: 100%;
+            background-position: 65% 50%
+        }
+
+        .anchors {
+            display: none;
+        }
+
+
+        .mobile-navbar-links {
+            display: none;
+            width: 100%;
+            height: calc(100vh);
+            background-color: white;
+            position: fixed;
+            top: 0;
+        }
+
+        nav .mobile-navbar-toggle {
+            display: block;
+            color: rgb(248, 245, 245);
+        }
+
+        .mobile-nav-links.active {
+            display: block;
+
+
+        }
+
+
+    }
+</style>
+
+<body>
+
+    <div id="nav container">
+        <div class="nav">
+            <i class="fas fa-bars  fa-2x"></i>
+
+
+            <div class="logo">
+
+            </div>
+        </div>
+        <div class="mobile-navbar-links">
+            <ul>
+                <li>
+                    <a href="">皇家蘭花</a>
+                </li>
+                <li>
+                    <a href="">客房簡介</a>
+                </li>
+                <li>
+                    <a href="">地理位置</a>
+                </li>
+            </ul>
+            <div class="banner ">
+                <!-- <img src="img/banner.jpg" alt=""> -->
+            </div>
+            <div class="anchors ">
+                <ul class="d-flex justify_content_center justfy_content_space_around">
+                    <li class=""><a href="#b">皇家蘭花</a> </li>
+                    <li class=""><a href="">客房簡介</a></li>
+                    <li class=""> <a href="">地理位置 </a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="B">
+            <div class="aboutus d-flex">
+                <div class="hotelpfhoto"></div>
+                <div class="introduction">
+                    <h1>
+                        皇家蘭花飯店
+                        <br>
+                        關島最好的小旅館</h1>
+                    <p>
+                        關島皇家蘭花飯店於2000年3月15日向世界各地的遊客開放，在熱帶天堂環境中提供乾淨舒適的住宿，提供溫暖的島嶼風情款待。在距關島遊客區杜夢灣美麗的海灘僅5分鐘的步行路程內，皇家蘭花酒店已成為價格合理，乾淨舒適的住宿的領導者。
+                        <br><br>可俯瞰杜夢灣，就像海邊的城堡一樣。 關島的七層皇家蘭花酒店提供204間客房和套房，為商務客人和度假者提供舒適的住宿。
+                        我們為每位客人提供便利設施，設施和友善的服務，一定會讓您留下難忘的經歷。
+                        <br><br>
+                        客人可以選擇高級客房，也可以選擇海景客房，城市景觀客房或泳池邊客房。 無論您是來關島旅遊還是商務遊，關島皇家蘭花都能為您提供一些便利。 立即預訂我們的房間。</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="F">
+            <div class="roomintro container d-flex justfy_content_space_around">
+                <div class="room">
+                    <div class="room1_photo"></div>
+                    <div class="room_intro">
+                        <h3>蘭花局部海景房 <br>(Partial Ocean View)
+                        </h3>
+                        <p>特色<br>
+                            客房面積：45平方公尺/484平方英尺<br>
+                            景觀： 局部海景<br>
+                            2張雙人床<br>
+                            禁菸房<br>
+                            獨立淋浴間/浴缸<br>
+                            吹風機<br>
+                            盥洗用品<br>
+                            每日客房清潔服務</p>
+
+                    </div>
+
+                </div>
+                <div class="room ">
+                    <div class="room2_photo"></div>
+                    <div class="room_intro">
+                        <h3>蘭花海景豪華房 <br> (Deluxe Ocean View)
+                        </h3>
+                        <p>客房面積：45平方公尺/484平方英<br>
+                            2張雙人床<br>
+                            景觀： 海景<br>
+                            禁菸房<br>
+                            獨立淋浴間/浴缸<br>
+                            吹風機<br>
+                            盥洗用品<br>
+                            每日客房清潔服務</p>
+                    </div>
+                </div>
+                <div class="room ">
+                    <div class="room3_photo"></div>
+                    <div class="room_intro">
+                        <h3>蘭花高級房 <br> (Superior)
+                        </h3>
+                        <p>特色<br>
+                            客房面積：38平方公尺/409平方英尺<br>
+                            2張雙人床<br>
+                            景觀： 市景<br>
+                            禁菸房<br>
+                            獨立淋浴間/浴缸<br>
+                            吹風機<br>
+                            盥洗用品<br>
+                            每日客房清潔服務</p>
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="D" class="h_100vh">
+        <div class="pallalex container">
+            <!-- <img src="" alt=""> -->
+        </div>
+        <div class="box"></div>
+    </div>
+
+
+    <div id="C" class="h_100vh d-flex ">
+        <div class="location container ">
+            <h1>Location</h1>
+            <p>皇家蘭花酒店位於美麗的杜夢灣中心地帶，距離島上的購物中心和受歡迎的旅遊景點僅數分鐘路程：
+                <br>
+                <br>
+                世界最大的K-Mart距酒店僅10分鐘步行路程。DFS-Galleria高級奢侈品牌和紀念品的領先者距離酒店有5分鐘的電車路程。居民經常光顧的密克羅尼西亞購物中心（Micronesia
+                Mall）距離酒店有10分鐘的班車車程。杜夢金沙廣場（Tumon Sands Plaza）是關島的豪華品牌中心，距離路易威登（Louis
+                Vuitton），蒂芙尼（Tiffany），香奈兒（Chanel），菲拉格慕（Ferragamo），卡地亞（Cartier）等僅數分鐘路程。關島名牌折扣店–乘坐無軌電車10分鐘。位於首都地區的阿加納購物中心（Agana
+                Shopping Centre）乘汽車或巴士僅15分鐘路程。沙堡娛樂中心（SandCastle Entertainment
+                Center）是一個娛樂中心，必不可少的娛樂中心是冰上魔術表演，每晚有晚餐和雞尾酒表演（週三關閉）<br>
+                <br>
+                皇家蘭花也提供便利的接駁服務，讓您可以輕鬆探索周邊地區。想自駕的房客們也別擔心，內即設有停車場；若停車場停滿的話，附近也有另一個停車場可供停車。房客可免費停車。在此住宿，您可以選擇自行停車。若您想坐車或自行開車，隨心所欲暢遊關島，飯店可以協助安排計程車或租車服務。
+                <br><br>
+                地址： 關島杜夢灣626 Pale San Vitores Road<br>
+                電話： +1 671-649-2000<br>
+                傳真： +1 671-649-3052<br>
+            </p>
+        </div>
+    </div>
+
+
+
+    <div id="footer" class="h_100vh d-flex "> © 2020 Royal Orchid Guam. All rights reserved. </div>
+
+    <script>
+        var mobile_toggle = document.querySelector(".");
+        var mobile_nav_links = document.querySelector(".mobile-nav-links");
+        var close_nav = document.querySelector(".close-nav");
+
+        mobile_toggle.addEventListener("click", function () {
+
+            mobile_nav_links.classList.add("active");
+        });
+
+        close_nav.addEventListener("click", function () {
+            mobile_nav_links.classList.remove("active");
+        });
+
+    </script>
+
+</body>
+
+</html>

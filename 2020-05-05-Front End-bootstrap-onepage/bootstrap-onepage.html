@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- 分頁上標籤 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css">
+    <title>bootstraponepage</title>
+
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+            font-family: "微軟正黑體";
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 50px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: calc(100vh - 50px);
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            /* height: calc(100vh - 50px); */
+        }
+
+        section {
+            padding: 60px 0;
+            background-image: url(./drops.svg);
+            background-size: cover;
+
+        }
+
+        .container img {
+            width: 100%;
+        }
+
+
+        .Paragraph {
+            width: 100%;
+            height: 500px;
+            background-image: url(./parallax.jpg);
+            background-size: cover;
+            background-attachment: fixed;  
+            position: relative;      
+        }
+
+        .Paragraph h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            color: white;
+
+        }
+
+        .carousel-inner img {
+          height: 100vh;
+        }
+
+        .section3 {
+          padding: 60px;
+          background-image: url(./drops.svg);
+            background-size: cover;
+        }
+
+        .section3 .row .col-12 {
+          display: flex;
+          align-items: center;
+        }
+
+        .Footer {
+            width: 100%;
+            padding: 20px;
+            background-color: #555;
+            color: white;
+        }
+
+
+        @media (min-width: 1600px) {
+            .container {
+              width: 1400px;
+            }
+            /* 大於1600px時,會變成width:1400px */
+        }
+
+        @media (min-width: 1800px) {
+            .container {
+              width: 1600px;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            .container {
+              width: 80%;
+            }
+
+        @meddia (min-width: 768px;){
+        .swiper-container{
+            width: 100%;
+
+        
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://www.iope.com/tw/zh/resource/img/a/logo.svg" height="60px" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">IOPE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">活動訊息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">產品介紹</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://front-wordpress.fashionguide.com.tw/wp-content/uploads/2018/11/IOPE-%E6%98%9F%E7%A9%BA%E8%A8%B1%E9%A1%98%E6%A5%B5%E8%87%B4%E9%81%AE%E7%91%95%E6%B0%A3%E5%A2%8A%E7%A6%AE%E7%9B%92NT1500-e1543990573705.jpg"
+                    alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://i.ytimg.com/vi/wX27-9lDp2E/maxresdefault.jpg" alt=""></div>
+            <div class="swiper-slide">
+                <img src="https://i.ytimg.com/vi/dP-3UHhfxUg/maxresdefault.jpg" alt=""></div>
+
+        </div>
+    </div>
+
+    <section>
+        <div class="container ">
+
+            <h1 class="text-center"> 活動訊息 </h1>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="card"  class="card-img-top">
+                        <img src="https://www.iope.com/tw/zh/event/__icsFiles/afieldfile/2019/06/10/event_01_1.png"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Find Your Perfect Skin Care Line</h5>
+                            <p class="card-text">尋找完美的護膚系列</p>
+                            <a href="#" class="btn btn-primary">查看詳情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 ">
+                    <div class="card" class="card-img-top">
+                        <img src="https://www.iope.com/tw/zh/event/__icsFiles/afieldfile/2019/06/10/event_02_1.png"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">IOPE Find Your Cushion Event
+                            </h5>
+                            <p class="card-text">女神裝完美首選</p>
+                            <a href="#" class="btn btn-primary">查看詳情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card" class="card-img-top">
+                        <img src="https://www.iope.com/tw/zh/event/__icsFiles/afieldfile/2019/05/08/20190508-list_1.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Holiday Wishies be Come True
+                            </h5>
+                            <p class="card-text">星空許願-夢想成真</p>
+                            <a href="#" class="btn btn-primary">查看詳情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section2">
+        <div class="Paragraph">
+          <h1>    <img src="https://www.iope.com/tw/zh/resource/img/a/logo.svg" height="60px" alt=""></h1>
+        </div>
+      </div>
+      
+
+      <div class="section3">
+          <div class="container">
+        <div class="row">
+          <div class="col-12 col-xl-6">
+            <img class="img-fluid" src="https://www.iope.com/tw/zh/products/__icsFiles/afieldfile/2019/05/10/detail.jpg" alt="">
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="text">
+              <h1>青春活顏菁粹(限定版)</h1>
+              <h2>BIO ESSENCE INTENSIVE CONDITIONING LIMITED EDITION</h2>
+              <p>使用之後肌膚保水度UP！使用2週後肌膚明亮度UP！使用4週後膚質獲得改善！含升級的Bio-redox α™，每日煥活肌膚自然力量，締造不易受時間、環境影響的健康肌膚。* Bio-redox™ VS Bio-redox α™ 抗老化比較試驗結果</p>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4 d-flex flex-row-reverse">
+           <!-- 在這讓圖片文字做顛倒 -->
+          <div class="col-12 col-md-6">
+            <img class="img-fluid" src="https://www.iope.com/tw/zh/products/__icsFiles/afieldfile/2019/04/15/1545632253194.jpg" alt="">
+          </div>
+          <div class="col-12 col-xl-6 ">
+            <div class="text">
+              <h1>時光金鑰緻顏安瓶</h1>
+              <h2>SUPER VITAL AMPOULE </h2>
+              <p>核心成分為第2劑的萬年松類黃酮(selaginella flavonoid)，藉由Triple Hydro-block™技術進行濃縮萃取並穩定而成。使用之前再與第1劑肌底安瓶混合，如此一來可將有效成分新鮮傳導至肌膚，強大抗氧化效能可讓肌膚恢復生機與活力。(1瓶=約1週使用量)
+                *萬年松類黃酮(Selaginella Flavonoid)：萃取自擁有頑強生命力的超級植物「萬年松」的抗氧化、強化彈性效能成分</p>
+            </div>
+          </div>
+        </div>
+        <row>
+    </div>v
+        
+      </div>
+      
+  
+      <!-- Footer  -->
+      <div class="Footer text-center" >Copyright©AMOREPACIFIC CORPORATION. ALL RIGHTS RESERVED.</div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+    <script src="/parallax.min.js"></script>
+
+
+
+
+    <script>
+
+        var swiper = new Swiper('.swiper-container');
+
+    </script>
+
+    <script> $('.parallax-window').parallax({ imageSrc: '/path/to/image.jpg' });</script>
+</body>
+
+</html>

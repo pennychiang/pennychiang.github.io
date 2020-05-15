@@ -1,19 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        h1{
-            text-align: center;
-            font-size: 50px;
-            color: darkcyan;
-            background-color:yellow;
-        }
-    </style>
+    <title>CHING_FANG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover.css">
+    <script src="//s3-ap-northeast-1.amazonaws.com/justfont-user-script/jf-60037.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+<style>
+    body {
+        margin: 0;
+        height: 3000PX;
+        font-family: testFont_2;
+        font-weight: 300 !important;
+    }
+
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .justfy_content_space_around {
+        justify-content: space-around;
+    }
+
+    .justfy_content_center {
+        justify-content: center;
+    }
+
+    .flex-direction-colum {
+        flex-direction: column;
+    }
+
+    .logobar {
+        width: 100%;
+        background-color: #F9F6F4;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .navbar {
+        width: 100%;
+        background-color: #BD9A7D;
+        justify-content: center;
+    }
+
+
+    .navbar ul {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .navbar li {
+        margin-right: 70px;
+        color: #E2DACF;
+        font-size: 23px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #E2DACF;
+        font-size: 23px;
+        font-weight: bold;
+    }
+
+    .parallax-window {
+        min-height: 900px;
+        background: transparent;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 15px 0;
+        /* margin-bottom: 5rem; */
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        ;
+        color: #1E0E0B;
+    }
+
+    h1::before {
+        background-image: url(./img/decp_1.png);
+    }
+
+    .hvr-underline-from-left:before {
+        background: #BD9A7D;
+    }
+
+    .section_B {
+        background-color: #C4AB97;
+    }
+
+    .section_B .container {
+        position: relative;
+        justify-content: flex-end;
+    }
+
+    .section_B .container span {
+        margin-right: 30px;
+    }
+
+    .section_B .container .col {
+        /* width: 1040px; */
+        /* background-color:rgba(129, 110, 94, 0.377); */
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translate(15%, 130%);
+        z-index: 99;
+
+    }
+
+    .section_B .container .textbg {
+        width: 1040px;
+        height: 220px;
+        background-color: rgba(129, 110, 94, 0.377);
+        float: left;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translate(-49%, -1%);
+    }
+
+    .section_B .container h2 {
+        margin-left: 15px;
+        color: #807155;
+    }
+
+    .section_B .container p {
+        margin-left: 15px;
+        color: #907256;
+
+    }
+
+    .section_B .container p span {
+        margin-left: 15px;
+        font-family: "微軟正黑體";
+        color: #E2DACF;
+
+    }
+
+    .section_C .container .row .col-2 .text p {
+        font-size: 23px;
+        font-family: "微軟正黑體";
+    }
+</style>
+
 <body>
-    <h1>tired as mtf</h1>
+    <section class="section_A">
+        <div id="firstpage" class="w-100">
+            <div class="logobar d-flex">
+                <div class="logo"> <img src="./img/卿坊LOGO-08.jpg" height="117px" alt="">
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #BD9A7D">
+                <div class="container ">
+                    <a class="navbar-brand" href="#">
+                    </a>
+                    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto   justfy_content_center">
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">珍玉卿坊</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">材質介紹</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">限量商品</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">購買須知</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">活動訊息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">賣場連結</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="banner">
+                <div class="parallax-window" data-parallax="scroll" data-image-src="./img/IMG_7712.jpg"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section_B">
+        <div class="titlearea d-flex justfy_content_center">
+            <h1 class="button hvr-underline-from-left">珍玉卿坊</h1>
+        </div>
+        <div class="container d-flex">
+            <div class="row d-flex ">
+                <div class="col d-flex flex-direction-colum">
+                    <div class="textbg" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"
+                        data-aos-duration="1000">
+                    </div>
+                    <h2 data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+                        <span>傳承</span>
+                        <span>感動</span>
+                        <span>價值</span>
+                    </h2>
+                    <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                        <p>
+                            被深刻落下的感動<br>
+                            光線映出來的色澤<br>
+                            永恆刻劃出的回憶</p>
+                    </div>
+                    <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="2500">
+                        <p><span>一顆顆的藝術裡讓人無法自拔深陷於閃耀地魅力<br>
+                                <span></span>一只外祖母承襲地嫁妝那首次接觸翡翠珠寶</span></p>
+                    </div>
+                </div>
+                <img src="./img/Jade-1.jpg" alt="" style="width: 610px;">
+            </div>
+        </div>
+    </section>
+    <section class="section_C">
+    <div class="titlearea d-flex justfy_content_center">
+        <h1 class="button hvr-underline-from-left">材質介紹</h1>
+    </div>
+    <div class="container">
+        <div class="row  mt-4 d-flex flex-row-reverse" style="margin-bottom: 30px;">
+            <div class="col-12 col-xl-6">
+                <img class="img-fluid" src="./img/jademodel_1-100.jpg" alt="">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="text">
+                    <p style="font-size: 23px; font-family: 微軟正黑體;"><span style="font-size: 50px; font-family:testFont_2;">玉</span><span></span><span></span>是一類礦石的泛稱，通常指的硬玉和軟玉，目前坊間所看到比較平價的大多為硬玉-翡翠，也就是俗稱的緬甸玉顏色呈翠綠色或紅色
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- 在這讓圖片文字做顛倒 -->
+            <div class="col-12 col-md-6">
+                <img class="img-fluid" src="./img/jademodel_2-100.jpg" alt="">
+            </div>
+            <div class="col-12 col-xl-6 ">
+                <div class="text">
+                    <div class="text">
+                        <p style="font-size: 23px; font-family: 微軟正黑體;">佩戴玉鐲的好處</p>
+                        <p>◆ 消暑 - 玉枕、玉鐲、玉床、玉掛件起到消暑的作用
+                        </p>
+                        <p>◆ 養生 - 降壓、穩定情緒，減輕急躁、緊張，緩解壓力、提神回復記憶的功效
+                        </p>
+                        <p>◆ 聚財 - 玉鐲厚重的樣式和濃郁的色彩無不展現著高貴態勢，富貴吉祥
+                        </p>
+                        <p>◆ 投資 -好的玉不但可以佩戴，還能保值升值
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="circle d-flex flex-wrap" style="width:125px; height:125px; background-color: #B9A08A; border-radius: 50%;"><h1 style="font-size: 60px; text-align: left; padding: 0px 30px; margin: 0;">A</h1><P style="text-align: center; font-size: 21px; padding: 0px 70px;">級</P></div>
+            </div>
+            <div class="col-12 col-md-6"></div>
+            <div class="col-12 col-md-6"></div>
+            <div class="col-12 col-md-6"></div>
+        </div>
+    </div>
+    </section>
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="parallax.js"></script>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- <script>
+            $('.parallax-window').parallax({imageSrc:'./img/IMG_7712.jpg'});
+        </script> -->
 </body>
+
 </html>

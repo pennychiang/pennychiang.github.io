@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "微軟正黑體";
+            color: rgb(68, 33, 19);
+        }
+
+        body {
+            background-color: rgb(167, 136, 131);
+            margin: 0;
+
+        }
+
+        .card {
+            width: 800px;
+            height: 700px;
+            border: 2px double rgb(68, 33, 19);
+            background-color: rgb(235, 209, 180);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            overflow: hidden;
+
+        }
+
+        .pic {
+            width: 40%;
+            height: 100%;
+            float: left;
+            background-image: url(https://img.alicdn.com/imgextra/9b/ef/TB1aTKrKVXXXXbiXXXXSutbFXXX.jpg);
+            background-size: cover;
+            background-position: center;
+            /* border-radius: 20px; */
+
+
+        }
+
+        .conten {
+            width: 60%;
+            padding: 20px 20px;
+            float: left;
+        }
+
+
+        .h1 {
+            position: absolute;
+            left: 50%;
+            color: black;
+            font-size: 14px;
+        }
+
+        .smalltitle {
+            color: rgb(92, 48, 35);
+            margin-left: 30px;
+            font-size: 20px;
+        }
+
+        hr {
+            border: 0;
+            height: 3px;
+            background: #333;
+        }
+
+        h3 {
+            color: rgb(92, 48, 35);
+        }
+
+        li {
+            display: inline-block;
+            background-color: rgb(250, 236, 215);
+            padding: 5px 15px;
+            margin-right: 25px;
+            color: rgb(68, 33, 19);
+            font-weight: bold;
+            border-radius: 10px;
+            transition-duration: 0.7s;
+            cursor: pointer;
+        }
+
+        li:hover{
+            background-color: rgb(61, 36, 25);
+            color: rgb(250, 236, 215);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="pic"></div>
+        <div class="conten">
+            <h1>珍珠<span class="smalltitle">Pearl</span></h1>
+            <hr>
+            <p>是一種由軟體動物（主要是牡蠣）生產的硬的、圓滑的產物。珍珠一般被用在首飾和珍寶行業中。</p>
+            <h3>珍珠的形成</h3>
+            <p>除使用珍珠蛤外，還有使用其他貝殼內有珠母層的軟體動物物種來生產珍珠的方法，例如：部分鮑、螺之類的腹足綱物種都可以。</p>
+            <h3>珠寶</h3>
+            <p>珍珠的價值主要由它的光澤、顏色、大小、有無表面的缺陷和形狀來決定。其中光澤最為重要。大的圓滿的珍珠比較罕見，一般被用在指戒上，水滴狀的一般用在懸掛物上，不規則的常用在項鍊中。</p>
+            <h3>顏色</h3>
+            <ul>
+                <li>白色</li>
+                <li>黃色</li>
+                <li>棕色</li>
+                <li>黑色</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
