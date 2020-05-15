@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .time {
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+
+        }
+
+        .card {
+            width: 30%;
+            /* background-color: gray; */
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+
+        .weather_icon {
+            display: flex;
+        }
+
+        img {
+            width: 50%;
+            margin: auto;
+
+        }
+
+        .text_center {
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="time"></h1>
+    <div class="container">
+        <div class="cards">
+        </div>
+    </div>
+
+    <script>
+        var ilength = 0;
+        var weather_cards = document.querySelector(".cards");
+        fetch("https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-BEC8FB9B-4CF6-4694-B67D-516CED1C6A88")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (myjson) {
+
+                var locations = myjson.records.location;
+                ilength = locations.length;
+                locations.forEach(function (item) {
+                    //地點
+                    var sname = item.locationName;
+                    //天氣描述
+                    var sintro = item.weatherElement[3].time[0].parameter.parameterName;
+                    //最高溫
+                    var imaxT = item.weatherElement[4].time[0].parameter.parameterName;
+                    //最低溫
+                    var iminT = item.weatherElement[2].time[0].parameter.parameterName;
+
+                    //icon
+                    var sweather = item.weatherElement[0].time[0].parameter.parameterName;
+                    // var iweather = parseInt(item.weatherElement[0].time[0].parameter.parameterValue);
+
+
+                    var simgurl = "";
+                    var scolor = "";
+                    // switch (iweather) {
+                    //     case value:
+
+                    //         break;
+
+                    //     default:
+                    //         break;
+                    // }
+                    switch (sweather) {
+                        case "多雲":
+                        case "多雲時陰":
+                        case "陰時多雲":
+                            simgurl = "./img/clouds.png";
+                            scolor = "silver";
+                            break;
+                        case "陰短暫陣雨":
+                            simgurl = "./img/shortrain.png";
+                            scolor = "gray";
+                            break;
+                        case "陰時多雲短暫陣雨":
+                            simgurl = "./img/cloudsrain.png";
+                            scolor = "gray";
+                            break;
+                        case "晴時多雲":
+                            simgurl = "./img/suncloudy.png";
+                            scolor = "lightblue";
+                            break;
+
+                        default:
+                            simgurl = "./img/sun.png";
+                            break;
+                    }
+                    console.log(sname + "-" + sweather + " . ");
+
+
+                    weather_cards.innerHTML += `
+                        <div class="card" style="background-color:${scolor};">
+                            <div class="weather_icon">
+                                <img src=${simgurl} alt="">
+                            </div>
+                            <h1 class='text_center'>${sname}</h1>
+                            <div class="max-temper text_center">最高溫：${imaxT}C</div>
+                            <div class="min_temper text_center">最低溫：${iminT}C</div>
+                            <div class="intro text_center">描述：${sweather}</div>
+                        </div>
+                        `
+                })
+
+                var idiff = ilength % 3;
+                if (idiff != 0) {
+                    for (let index = idiff; index < 3; index++) {
+                        weather_cards.innerHTML += `
+                        <div class="card">
+                            <div class="weather_icon">
+                                <img src="" alt="">
+                            </div>
+                            <h1 class='text_center'></h1>
+                            <div class="max-temper text_center"></div>
+                            <div class="min_temper text_center"></div>
+                            <div class="intro text_center"></div>
+                        </div>
+                        `
+                    }
+                }
+
+            })
+
+        setInterval(nowtime, 100);
+
+        function nowtime() {
+            var time = document.querySelector('.time');
+            var d = new Date();
+            var current_date = d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
+            var current_time = d.getHours() + ":" + leftPad(parseInt(d.getMinutes()), 2) + ":" + leftPad(parseInt(d.getSeconds()), 2);
+            time.innerHTML = `${current_date}<br>${current_time}`;
+        }
+        function leftPad(number, targetLength) {
+            var output = number + '';
+            while (output.length < targetLength) {
+                output = '0' + output;
+            }
+            return output;
+        }
+
+    </script>
+</body>
+
+</html>

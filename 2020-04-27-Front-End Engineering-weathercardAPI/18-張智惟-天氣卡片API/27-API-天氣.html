@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+
+        .title {
+            text-align: center;
+        }
+
+        .cards {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 0 auto;           
+        }
+
+
+        .cards .card {
+            background-color: teal;
+            width: 30%;
+            margin: 10px;
+            padding: 5px; 
+            border: black 1px solid;
+            text-align: center;
+        }
+
+        .cards .card img {
+            width: 150px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1 class="time"></h1>
+    </div>
+    <div class="cards">
+        <!-- <div class="card">
+            <div class="weather_icon">
+                <img src="./img/weather/01.weather.jpg" alt="">
+            </div>
+            <div class="location">台中市</div>
+            <div class="weather-name">晴天</div>
+            <div class="max-temper">最高溫：30℃</div>
+            <div class="min-temper">最低溫：19℃</div>
+            <div class="ci">炎熱</div>
+        </div> -->
+
+
+
+    </div>
+    <script src="./js/jquery-3.5.0.min.js"></script>
+    <script>
+
+        var weather_cards = document.querySelector(".cards")
+
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-50A54F34-B7D7-4A6A-84FC-C386D60327C9')
+            .then(function(response) {
+                return response.json();
+        })
+            .then(function(weather_data) {
+                var locations = weather_data.records.location
+
+                locations.forEach(function(location) {
+                    var location_name = location.locationName
+                    var weather_name = location.weatherElement[0].time[0].parameter.parameterName
+                    var max_temper = location.weatherElement[4].time[0].parameter.parameterName
+                    var min_temper = location.weatherElement[2].time[0].parameter.parameterName
+                    var ci = location.weatherElement[3].time[0].parameter.parameterName
+                    var wx_value = location.weatherElement[0].time[0].parameter.parameterValue
+                    
+                    // console.log(wx_value);
+
+                    if ( wx_value == 1 ) {
+                        var w_img = './img/weather/01.weather.jpg'
+                     }else if (wx_value > 1 && wx_value < 8 ) {
+                        var w_img = './img/weather/02.weather.jpg'
+                    } else {
+                        var w_img = './img/weather/03.weather.jpg'
+                    }
+                    
+                    weather_cards.innerHTML +=`
+                    <div class="card">
+                    <div class="weather_icon">
+                    <img src="${w_img}" alt="">
+                    </div>
+                    <div class="location">${location_name}</div>
+                    <div class="weather-name">${weather_name}</div>
+                    <div class="max-temper">最高溫：${max_temper}℃</div>
+                    <div class="min-temper">最低溫：${min_temper}℃</div>
+                    <div class="ci">${ci}</div>
+                    </div>
+                    `
+                    // console.log(w_img);
+                });
+
+                var date = new Date()
+                var current_date = date.getFullYear() + '年' + ((date.getMonth() + 1)) + '月' + date.getDate() + '日'
+
+                var current_time = date.getHours() + ':' + date.getMinutes()
+                var time = document.querySelector(".title")
+                time.innerHTML += `
+                <h1 class="time">${current_date}<br>${current_time}</h1>
+                `
+                // console.log(current_time);
+        });
+
+    </script>
+    
+</body>
+</html>

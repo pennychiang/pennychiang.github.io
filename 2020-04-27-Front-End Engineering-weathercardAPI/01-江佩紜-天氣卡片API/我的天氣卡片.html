@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0 50px;
+            text-align: center;
+            font-family: '微軟正黑體';
+        }
+
+        .time {
+            font-size: 37px;
+        }
+
+        .cards {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .card {
+            width: calc((100% - 30px) /3);
+            
+            background: -webkit-linear-gradient(left, rgb(197, 229, 238),#45B7D6);
+            background: -o-linear-gradient(right, rgb(197, 229, 238), #45B7D6);
+            background: -moz-linear-gradient(right, rgb(197, 229, 238), #45B7D6);
+            background: linear-gradient(to right, rgb(197, 229, 238), #45B7D6);
+            /* background-color: rgb(173, 204, 230); */
+            border-radius: 10%;
+            margin: 5px 5px;
+
+
+        }
+
+        img {
+            width: 70%;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10%;
+            box-shadow:4px 4px 8px 4px rgba(18, 39, 71, 0.5);
+            opacity: 1;
+
+
+        }
+
+        .location {
+            margin: 0;
+        }
+
+        .texts {
+            font-size: 21px;
+            color: rgb(255, 255, 255);
+            margin: 0;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <h1 class="time"></h1>
+    <div class="cards">
+        <!-- <div class="card">
+            <div class="weather_icon">
+                <img src="./img/晴.jpg" alt="">
+            </div>
+            <h1 class="location">台中市</h1>
+            <div class="weather texts">陰天</div>
+            <div class="max-temper ">最高溫:26c</div>
+            <div class="min-temper">最低溫:20c</div>
+            <div class="CI texts">有點涼</div>
+        </div> -->
+    </div>
+
+
+</body>
+
+
+
+<script>
+
+    fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-F734A9DB-E4ED-4AEE-8226-F388BE9BD4C2')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (weather_data) {
+
+            var weather_card = document.querySelector('.cards')
+
+            var locations = weather_data.records.location
+
+
+            locations.forEach(function (location) {
+
+                var location_name = location.locationName  //地點
+
+                var Wx = location.weatherElement[0].time[0].parameter.parameterName  //天氣
+
+                var CI = location.weatherElement[3].time[0].parameter.parameterName  //天氣概況
+
+                var maxT = location.weatherElement[4].time[0].parameter.parameterName  //最高溫
+
+                var minT = location.weatherElement[2].time[0].parameter.parameterName  //最低溫
+
+
+                var Wx_value = location.weatherElement[0].time[0].parameter.parameterValue
+
+                if (Wx_value == 1) {
+                    var weather_img = './img/晴.jpg'
+                } else if (Wx_value > 1 && Wx_value < 7) {
+                    var weather_img = './img/晴時多雲.jpg'
+                }
+                else {
+                    var weather_img = './img/雨.jpg'
+                }
+
+
+                weather_card.innerHTML +=
+                    ` 
+            <div class="card">
+                <div class="weather_icon">
+                    <img src="${weather_img}" alt="">
+                </div>
+                <h1 class="location">${location_name}</h1>
+                <div class="weather texts">${Wx}</div>
+                <div class="max-temper">最高溫:${maxT}c</div>
+                <div class="min-temper ">最低溫:${minT}c</div>
+                <div class="CI texts">${CI}</div>   
+            </div>
+            `
+
+
+
+
+            });
+
+
+            var time = document.querySelector('.time')
+            var date = new Date();
+
+            var current_date = date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日'
+
+            var current_time = date.getHours() + ':' + date.getMinutes()
+
+            time.innerHTML += `${current_date}<br>${current_time}`
+
+
+            
+
+        })
+
+
+
+
+
+</script>
+
+</html>

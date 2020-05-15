@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        body {
+            margin-top: 50px;
+            background-color: rgb(139, 135, 190);
+            font-family: Arial;
+
+
+        }
+
+        .post_comment {
+            width: 60%;
+            margin: 0 auto;
+            background-color: rgb(243, 167, 96);
+            padding: 50px 40px;
+            border-radius: 30px;
+        }
+
+        .post_comment h1 {
+            text-align: center;
+            color: rgb(95, 51, 9);
+            font-weight: bolder;
+
+        }
+
+        .form_group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-right: 5px;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            text-align: center;
+            color: rgb(95, 51, 9);
+            font-size: 23px;
+            font-weight: bolder;
+
+        }
+
+        input {
+            height: 30px;
+            background-color: rgb(250, 237, 226);
+            border: none;
+            font-size: 20px;
+            color: rgb(84, 79, 160);
+            padding: 5px;
+            border-radius: 30px;
+
+        }
+
+        textarea {
+            background-color: rgb(250, 237, 226);
+            border: none;
+            font-size: 20px;
+            color: rgb(84, 79, 160);
+            padding: 5px;
+            font-family: Arial;
+            border-radius: 30px;
+        }
+
+        button {
+            align-items: center;
+        }
+
+        .button_placed {
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+            justify-content: space-around;
+        }
+
+        button {
+            border: none;
+            background-color: unset;
+            padding: 0;
+        }
+
+        button,
+        .submit_button {
+            font-weight: bolder;
+            font-size: 23px;
+            border-radius: 50%;
+            padding: 30px;
+            color: rgb(95, 51, 9);
+            background-color: rgb(250, 237, 226);
+
+        }
+
+
+        button:hover,
+        .submit_button:hover {
+            background-color: rgb(139, 135, 190);
+            color: rgb(250, 237, 226);
+
+        }
+
+        .cards {
+            /* width: 80%; */
+
+            color: rgb(139, 135, 190);
+            margin: 30px auto;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            margin-bottom: 10px;
+            background-color: rgb(250, 237, 226);
+            border-radius: 30px;
+        }
+
+
+        img {
+            width: 50%;
+            padding: 20px;
+            border-radius: 30px;
+        }
+
+        .news {
+            width: 50%;
+        }
+
+        a {
+            display: flex;
+            text-decoration: none;
+        }
+
+        h3 {
+            color: rgb(95, 51, 9);
+            text-align: center;
+            font-size: 23px;
+        }
+
+        span{
+            color: rgb(95, 51, 9);  
+            font-size: 18px;
+        }
+        .content{
+            color: rgb(95, 51, 9);
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="post_comment">
+        <h1>是否學RWD累累der討論區 </h1>
+        <form action="" method="POST">
+            <input type="hidden" name="date" value="">
+            <div class="form_group">
+                <label for="#titile">標題</label>
+                <input id="title" type="text" name="title" required>
+            </div>
+            <div class="form_group">
+                <label for="#content">內容</label>
+                <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form_group">
+                <label for="#image_url">圖片連結</label>
+                <input id="image_url" type="text" name="image_url">
+            </div>
+            <div class="form_group">
+                <label for="#href">超連結</label>
+                <input id="href" type="text" name="href">
+            </div>
+
+
+            <div class="button_placed">
+                <button type="restet">清除內容</button>
+                <div class="submit_button">新增留言</div>
+            </div>
+        </form>
+        <div class="cards">
+            <div class="card">
+                <a href="">
+                    <img src="https://www.mirrormedia.com.tw/assets/images/20180526175607-fcf1ef7b11f53998f516494ad25d4a0c-mobile.jpg"
+                        alt="">
+                    <div class="news">
+                        <h3 class="title">1234</h3>
+                        <span>發布日期:145645645456456</span>
+                        <div class="content">
+                            12313123123123123123123
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+    <script>
+
+        fetch('http://ajax_lesson.digipack-develop.com/news') //再去用像天氣小卡的方法,把文件抓回來
+            .then(function (response) {       //驗證網站回應
+                return response.json()
+            })
+
+            .then(function (data) {
+                //JQ寫法
+                // console.log(data);
+
+                $.each(data, function (index, news) {
+
+                    var old_news = $('.cards').html();
+
+                    $('.cards').html(`
+                <div class="card">
+                    <a href="${news.href}">
+                        <img src="${news.img_url}"
+                            alt="">
+                        <div class="news">
+                            <h3 class="title">${news.title}</h2>
+                            <span>發布日期:${news.date}</span>
+                            <div class="content">${news.content}</div>
+                        </div>
+                    </a>
+                </div>
+                ${old_news}
+            `)
+
+                    $('input,textarea').val('')
+                    //重整
+                })
+            })
+
+        //抓取使用者輸入的表單input的內容
+        $('.submit_button').click(function () {
+            // alert('submit_button')
+            var post_title = $('#title').val();
+            var content = $('#content').val();
+            var href_link = $('#href').val();
+            var img_url = $('#image_url').val();
+            // console.log(img_url);
+            
+
+            var current_date = new Date
+            var date = current_date.getFullYear() + '年' + (current_date.getMonth() + 1) + '月' + current_date.getDate() + '日'
+
+            //Json格式進行傳送的準備
+            // var post_news = {
+            //     'title':post_title,
+            //     'content':content,
+            //     'href':href_link,
+            //     'img_url':img_url,
+            //     'date':date
+            // } 可以直接貼這段,也可以直接用這個變數
+
+            $.ajax({
+                url: 'http://ajax_lesson.digipack-develop.com/news',
+                method: 'post',
+                data: {
+                    'title': post_title,
+                    'content': content,
+                    'href': href_link,
+                    'image_url': img_url,
+                    'date': date
+                },
+                success: function (res) {
+                    // res = result 成果
+                    //這裡是伺服器收取資料成功後,發送回來的資料在這裡執行
+
+                    var oli_news = $('.cards').html();
+
+                    $('.cards').html(`
+                    <div class="crad">
+                        <a href="${href_link}">
+                            <img src="${img_url}"
+                                alt="">
+                            <div class="news">
+                                <h2 class="title">${post_title}</h2>
+                                <span>發布日期:${date}</span>
+                                <div class="content">${content}</div>
+                            </div>
+                        </a>
+                    </div>
+                    ${oli_news}
+                `)
+
+                    $('input,textarea').val('')
+                    //重整
+                },
+                error: function (res) {
+                    console.log(res);
+
+                }
+            })
+        })
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
